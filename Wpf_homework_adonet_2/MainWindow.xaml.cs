@@ -79,6 +79,7 @@ namespace Wpf_homework_adonet_2
             try
             {
                 my_conn.Open();
+                //выполняем запрос к процедуре, не требующий ответа
                 get_xml.ExecuteNonQuery();
                 my_xml = XDocument.Parse((String)get_xml.Parameters["@Output_par"].Value);
                 my_xml.Save(System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "sales_report.xml"));
