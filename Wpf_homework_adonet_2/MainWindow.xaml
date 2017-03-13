@@ -1,0 +1,42 @@
+﻿<Window x:Class="Wpf_homework_adonet_2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf_homework_adonet_2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="380" Width="550">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Name="Input_Panel" Grid.Row="0" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+            <TextBox Name="TB_input" Height="30" Width="350" Margin="0,0,20,0" TextWrapping="NoWrap" HorizontalScrollBarVisibility="Auto" TextAlignment="Left" FontSize="14" VerticalContentAlignment="Center" AutomationProperties.HelpText="Please input SQL Query here" ToolTip="Please input SQL Query here." />
+            <Button Name="BTN_Run_qr" Height="30" Width="100" Click="Run_qr_Click" Margin="20,0,0,0">Run query</Button>
+        </StackPanel>
+        <DataGrid Name="DG_panel" Grid.Row="1" Grid.ColumnSpan="4" Grid.RowSpan="2" AutoGenerateColumns="True" CanUserAddRows="True" CanUserDeleteRows="True" ></DataGrid>
+        <StackPanel Grid.Row="3" Grid.Column="0" Background="AntiqueWhite">
+            <Button Name="BTN_getXML" Width="100" Height="50" Margin="0,20,0,0" Content="Sales report&#x0a;      XML" Click="BTN_getXML_Click"></Button>
+        </StackPanel>
+        <StackPanel Name="Dates_Panel" Grid.Column="1" Grid.Row="3" Background="AntiqueWhite">
+            <Label>Date Begin</Label>
+            <Border BorderThickness="3" BorderBrush="Azure">
+                <TextBox Name="TB_Date_beg" BorderThickness="1" BorderBrush="BlanchedAlmond" Background="AntiqueWhite" ToolTip="Input date as: YYYY-MM-DD" Text="2017-03-13"></TextBox>
+            </Border>
+            <Label>Date End</Label>
+            <Border BorderThickness="3" BorderBrush="Azure">
+                <TextBox Name="TB_Date_end" BorderThickness="1" BorderBrush="BlanchedAlmond" Background="AntiqueWhite" ToolTip="For current date live blank" Text="2017-03-13"></TextBox>
+            </Border>
+        </StackPanel>
+        <Button Name="BT_DG_to_xml" Grid.Column="3" Grid.Row="3" Margin="10, 20" Content="DataGrid content&#x0a;      to XML" Click="BT_DG_to_xml_Click"></Button>
+    </Grid>
+</Window>
